@@ -73,7 +73,7 @@
 		<repository>
 			<id>nexus</id>
 			<name>Internal Releases</name>
-			<url>http://nexus/repository/test-app</url>
+			<url>http://nexus:8081/repository/test-app</url>
 		</repository>
 	</distributionManagement>
 </project>
