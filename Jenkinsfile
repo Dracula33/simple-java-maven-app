@@ -4,7 +4,7 @@ node(""){
         git branch: '**', changelog: false, poll: false, url: 'https://github.com/Dracula33/simple-java-maven-app.git'
         print(env.BRANCH_NAME)
         print(env.TAG_NAME)
-        print($GIT_BRANCH)
+        print(env.GIT_BRANCH)
     }
     stage("Maven"){
         b_name=env.BRANCH_NAME
