@@ -12,7 +12,7 @@ node(""){
         print(t_name)
         print(b_name)
         VERSION=t_name
-        if (VERSION == ''){
+        if (VERSION == 'null'){
             VERSION=b_name
         }
         if ( VERSION == "master" ){
