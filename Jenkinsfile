@@ -12,7 +12,7 @@ node(""){
         print(t_name)
         print(b_name)
         VERSION=t_name
-        if (VERSION = ''){
+        if (VERSION == ''){
             VERSION=b_name
         }
         VERSION=VERSION.substring(VERSION.lastIndexOf("/") + 1)
