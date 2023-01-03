@@ -11,18 +11,15 @@ node(""){
         t_name=env.TAG_NAME
         print(t_name)
         print(b_name)
-        VERSION=t_name.substring(t_name.lastIndexOf("/") + 1)
-        if (VERSION == ''){
-          VERSION=b_name.substring(b_name.lastIndexOf("/") + 1)
-          if ( VERSION == "master" ){
-            echo "Master branch must have a tag"
-            sh 'exit 1'
-          }
-          sh "/opt/maven/bin/mvn -f ./pom.xml -s /var/lib/jenkins/workspace/test/settings.xml clean deploy -Dversion=$VERSION"
+        VERSION=t_name
+        if (VERSION = ''){
+            VERSION=b_name
         }
-        else{
-            echo 'Version is EMPTY'
+        VERSION=VERSION.substring(VERSION.lastIndexOf("/") + 1)
+        if ( VERSION == "master" ){
+          echo "Master branch must have a tag"
+          sh 'exit 1'
         }
-        
+        sh "/opt/maven/bin/mvn -f ./pom.xml -s /var/lib/jenkins/workspace/test/settings.xml clean deploy -Dversion=$VERSION"
     }
 }
