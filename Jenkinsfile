@@ -15,7 +15,6 @@ node(""){
         if (VERSION == ''){
             VERSION=b_name
         }
-        VERSION=VERSION.substring(VERSION.lastIndexOf("/") + 1)
         if ( VERSION == "master" ){
           echo "Master branch must have a tag"
           sh 'exit 1'
