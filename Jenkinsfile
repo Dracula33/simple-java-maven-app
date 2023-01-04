@@ -19,6 +19,6 @@ node(""){
           echo "Master branch must have a tag"
           sh 'exit 1'
         }
-        sh "/opt/maven/bin/mvn -f ./pom.xml -s /var/lib/jenkins/workspace/test/settings.xml clean deploy -Dversion=$VERSION"
+        sh "/opt/maven/bin/mvn -f ./pom.xml -s ./settings.xml clean deploy -Dversion=$VERSION"
     }
 }
